@@ -1,0 +1,17 @@
+body{
+	background-image: url(/img/players_bg.png);
+	background-position: center;
+	background-repeat: none;
+	background-attachment: fixed;
+	background-color: black;
+}
+
+img{
+	margin-bottom: 35px;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+
+img:hover{
+	opacity: 0.8;
+}
