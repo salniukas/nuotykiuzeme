@@ -70,7 +70,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Vartotojo Sąsaja</a>
+                        <a href="{{ url('/home') }}">Serveris</a>
                     @else
                         <a href="{{ route('login') }}">Prisijungti</a>
                     @endauth
@@ -85,8 +85,9 @@
                 <div class="links">
                     <a href="/donate/select">Žalioji Zona</a>
                     <a href="/atranka">Atranka</a>
+                    <a href="/video">Video</a>
                     @auth
-                        <a href="/home">Vartotojo Sąsaja</a>
+                        <a href="/home">Serverio Info</a>
                     @endauth
                 </div>
             </div>

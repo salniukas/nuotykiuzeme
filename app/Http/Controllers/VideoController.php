@@ -29,7 +29,7 @@ class VideoController extends Controller
    		//validate
    		$this->validate(request(), [
    			'title' => 'required|max:255',
-   			'desc' => 'required|max:350',
+   			'description' => 'max:350',
    			'author' => 'required|max:255',
    			'yt' => 'required|max:255',
    		]);
@@ -42,7 +42,7 @@ class VideoController extends Controller
 
    public function index()
    {
-	  	$video = Video::all();
+	  	$video = Video::all()->sortByDesc('id');
 	   	return view('youtube.video', ['video' => $video]);
 	   		 
    }

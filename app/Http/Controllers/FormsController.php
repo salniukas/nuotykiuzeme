@@ -211,14 +211,16 @@ class FormsController extends Controller
    public function vote($id)
    {
       if(Auth::user()->isAleradas){
-         $form = Forms_vote::where('voted_for', $id)->first();
+         $voted = Forms_vote::where('voter_discord', Auth::user()->discord_id)->where('voted_for', $id)->first();
 
-         if ($form['voter_discord'] != Auth::user()->discord_id) {
+         if (is_null($voted)) {
             $voter = Auth::user()->discord_id;
             $voter_name = Auth::user()->username;
             $reason = "Už";
 
             Forms_vote::create(['voted_for' => $id, 'voter_discord' => $voter, 'voter_name' => $voter_name, 'reason' => $reason]);
+         }else{
+         	Session::flash('message', 'Jau balsavote');
          }
       return redirect("/anketos");
    }
@@ -227,14 +229,16 @@ class FormsController extends Controller
    public function vote2($id)
    {
       if(Auth::user()->isAleradas){
-         $form = Forms_vote::where('voted_for', $id)->first();
+         $voted = Forms_vote::where('voter_discord', Auth::user()->discord_id)->where('voted_for', $id)->first();
 
-         if ($form['voter_discord'] != Auth::user()->discord_id) {
+         if (is_null($voted)) {
             $voter = Auth::user()->discord_id;
             $voter_name = Auth::user()->username;
             $reason = "Prieš";
 
             Forms_vote::create(['voted_for' => $id, 'voter_discord' => $voter, 'voter_name' => $voter_name, 'reason' => $reason]);
+         }else{
+         	Session::flash('message', 'Jau balsavote');
          }
       return redirect("/anketos");
    }
