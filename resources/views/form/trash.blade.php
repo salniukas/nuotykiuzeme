@@ -22,24 +22,24 @@
 						<td style="width:1%">Id</td>
 						<td>Vardas</td>
 						<td>Amžius</td>
-						<td>Kodel jis</td>
-						<td>Rase</td>
-						<td>Minecraft Sugebejimai</td>
+						<td>Discord</td>
+						<td>Minecraft nick</td>
+						<td>Balsai</td>
+						<td style="width: 1%">Statusas</td>
 					</tr> 
-					  @foreach ($anketos_forms as $form)
+					  @foreach ($forms as $form)
 					 <tr>
 					 	<td>{{ $form->id }}</td>
 					 	<td>{{ $form->name }}</td>
-					 	@if ($form->age < 14)
-					 	<td bgcolor="#ff8080">{{ $form->age }}</td>
-					 	@else
 					 	<td>{{ $form->age }}</td>
-					 	@endif
-					 	<td>{{ $form->why }}</td>
-					 	<td>{{ $form->rase }}</td>
-					 	<td>{{ $form->mability }}</td>
-					 	@if(Auth::user()->isAleradas)
-						<td><button class="btn btn-xs btn-info pull-right clearfix"><a href="/atranka/show/{{ $form->id }}">Peržiurėti</a></button></td>
+					 	<td>{{ $form->discord_id }}</td>
+					 	<td>{{ $form->username }}</td>
+					 	@php
+					 		$balsai = App\Forms_vote::where('voted_for', $form->id)->count();
+					 	@endphp
+					 	<td>{{ $balsai}}</td>
+					 	@if(Auth::user()->isSupport() || Auth::user()->isAdmin() || Auth::user()->isAleradas())
+						<td><a href="/anketos/{{ $form->id }}"><button class="btn btn-xs btn-info pull-right clearfix">Peržiurėti</button></a></td>
 						@endif
 					 	@endforeach
 					 </tr>

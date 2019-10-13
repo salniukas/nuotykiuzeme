@@ -27,16 +27,16 @@
                 {{Form::label('veikla', 'Jūsų Veikla:')}}
                 {{Form::text('veikla', null, array('class' => 'form-control', 'placeholder'=>'Twitch/Youtube/Dizainas ir t.t'))}}
 
-                {{Form::label('rase', 'Jūsų Rasė:')}}
-                {{Form::text('rase', null, array('class' => 'form-control', 'placeholder'=>'Laazaras,Unelajus,Haeras,Glao' ))}}
+                {{Form::label('rase', 'Jūsų Frakciją:')}}
+                {{ Form::select('rase', array('Koboldai' => 'Koboldai', 'Ištremtieji' => 'Istremtieji', 'Xowoxai' => 'Xowoxai', 'Azija' => 'Azija', 'Atlanta' => 'Atlanta'), array('class' => 'form-control'))  }}<br>
 
-                {{Form::label('youtube', 'Jūsų Youtube Kanalas:')}}
+                {{Form::label('youtube', 'Jūsų Youtube Kanalas(Jei neturit palikti tuščia):')}}
                 {{Form::text('youtube', null, array('class' => 'form-control', 'placeholder'=>'https://www.youtube.com/user/thesalniukas' ))}}
 
-                {{Form::label('twitch', 'Jūsų Twitch Kanalas:')}}
-                {{Form::text('twitch', null, array('class' => 'form-control', 'placeholder'=>'https://www.twitch.tv/salnius' ))}}
+                {{Form::label('twitch', 'Jūsų Twitch Kanalas(Jei neturit palikti tuščia):')}}
+                {{Form::text('twitch', null, array('class' => 'form-control', 'placeholder'=>'https://www.twitch.tv/salnius' ))}}<br>
 
-    			{{Form::submit('Prideti'), array('class' => 'btn btn-success' )}}
+    			{{Form::submit('Užsiregistruoti'), array('class' => 'btn btn-success' )}}
 
 			{!! Form::close() !!}
             @include('layouts.errors')

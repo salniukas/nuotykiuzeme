@@ -38,6 +38,14 @@ return [
     'client_id' => env('DISCORD_KEY'),
     'client_secret' => env('DISCORD_SECRET'),
     'redirect' => env('DISCORD_REDIRECT_URI'),  
-], 
+    ],
+    'paysera' => [
+        'projectid' => env('PAYSERA_ID'),
+        'password' => env('PAYSERA_PASS'),
+        'accepturl' => 'http://nuotykiuzeme.lt/uzsakymas-pavyko',
+        'cancelurl' => 'https://nuotykiuzeme.lt/uzsakymas-nepavyko',
+        'version' => '1.6',
+        'test' => env('PAYSERA_TEST'),
+    ],
 
 ];

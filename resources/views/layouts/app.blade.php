@@ -5,7 +5,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Alerado Žemė') }}</title>
+    <title>{{ config('app.name', 'Nuotykių Žemė') }}</title>
 
     <!-- Styles -->
 
@@ -35,7 +35,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-left" href="{{ url('/') }}">
-                        <img src="./img/logo_a.png">
+                        <h2>Nuotykių Žemė</h2>
                     </a>
                 </div>
 
@@ -80,13 +80,13 @@
     </div>
     <br>
     <br>
-        <footer>
+{{--         <footer>
             <div class="container" id="contacts">
                 <center><div class="copyright">
                     Visos teisės saugomos ©  Trys Kubai
                 </div></center>
             </div>
-        </footer>   
+        </footer>  --}}  
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

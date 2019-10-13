@@ -22,7 +22,7 @@
             @endif
 			<div class="panel panel-default">
 				<table>
-					<tr>Anketos į Alerado Žemę</tr>
+					<tr>Anketos į Nuotykių Žeme</tr>
 				<table class="table">
 					<tr>
 						<td style="width:1%">Id</td>
@@ -41,17 +41,18 @@
 					 	<td>{{ $form->discord_id }}</td>
 					 	<td>{{ $form->username }}</td>
 					 	@php
-					 		$balsai = App\Forms_vote::where('voted_for', $form->id)->count();
+					 		$balsaiu = App\Forms_vote::where('voted_for', $form->id)->where('reason', 'Už')->count();
+					 		$balsaip = App\Forms_vote::where('voted_for', $form->id)->where('reason', 'Prieš')->count();         
 					 	@endphp
-					 	<td>{{ $balsai}}</td>
+					 	<td>{{ $balsaiu}}/-{{ $balsaip }}</td>
 					 	@if($form->rejected == 1)
 					 		<td style="background-color: red;"></td>
+					 	@elseif($form->aleradas == 1)
+					 		<td style="background-color: purple;"></td>
 					 	@elseif($form->accepted == 1)
 					 		<td style="background-color: green;"></td>
 					 	@elseif($form->accepted == 0 && $form->rejected == 0)
 					 		<td style="background-color: yellow;"></td>
-					 	@elseif($form->aleradas == 1)
-					 		<td style="background-color: purple;"></td>
 					 	@endif
 					 	@if(Auth::user()->isSupport() || Auth::user()->isAdmin() || Auth::user()->isAleradas())
 						<td><a href="/anketos/{{ $form->id }}"><button class="btn btn-xs btn-info pull-right clearfix">Peržiurėti</button></a></td>

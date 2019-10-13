@@ -69,7 +69,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Unelajų technologijos blokuoja prieiga į šia vietą.
+                    Ištremtieji kviečia prisijungti prie jų, nes nieks čia jūsų neįleidžia
                 </div>
             </div>
         </div>

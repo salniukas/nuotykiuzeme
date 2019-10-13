@@ -7,7 +7,9 @@ Route::get('/oauth/discord/callback', 'Auth\LoginController@handleProviderCallba
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/private', function () {
+    return view('privacy');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -36,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('atranka/aleradas/{id}', 'FormsController@alerade');
 	Route::get('anketos/{id}', 'FormsController@show')->name('anketa');
 	Route::get('anketos/vote/{id}', 'FormsController@vote');
+	Route::get('anketos/vote2/{id}', 'FormsController@vote2');
 });
 
 //Video & Žaidėjai
@@ -44,6 +47,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('zaidejai/add', 'PlayerAddController@register')->name('addzaidejai');
 	Route::post('zaidejai/store', 'PlayerAddController@store')->name('storez');
+	Route::get('zaidejai/edit', 'PlayerAddController@edit');
+	Route::post('zaidejai/update', 'PlayerAddController@update')->name('Zupdate');
 	//parodyti
 
 	Route::get('zaidejas/show/{id}', 'PlayerAddController@show')->name('zaidejas');
@@ -63,8 +68,8 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //Donations
-Route::get('donate/select', 'PaymentController@donate')->name('dselect');
-Route::post('donate/store', 'PaymentController@store')->name('dstore');
-Route::get('accept', 'PaymentController@accept');
-Route::get('cancel', 'PaymentController@cancel')->name('cancel');
-Route::get('getDone', 'PaymentController@getDone')->name('getDone');
+Route::get('donate/select', 'OrderController@donate')->name('dselect');
+Route::post('/paysera/redirect', 'PayseraGatewayController@redirect')->name('paysera-redirect');
+Route::get('/paysera/callback', 'PayseraGatewayController@callback')->name('paysera-callback');
+Route::get('/uzsakymas-pavyko', function () { return view('donate.accept'); });
+Route::get('/uzsakymas-nepavyko', function () { return view('donate.cancel'); });

@@ -18,29 +18,41 @@
     			{{Form::number('age', null, array('class' => 'form-control'))}}
 
     			{{Form::label('discord_id', 'Discord ID:')}}
-    			@if($discord != null)
-    				{{Form::text('discord_id', $discord, array('class' => 'form-control'))}}
-    			@elseif($discord == null)
-    				{{Form::text('discord_id', null, array('class' => 'form-control'))}}
-    			@endif
+    			{{Form::text('discord_id', $discord, array('class' => 'form-control','readonly'))}}
+
     			{{Form::label('email', 'Jūsų El.Paštas:')}}
     			{{Form::email('email', $mail, array('class' => 'form-control'))}}
 
     			{{Form::label('roleplay', 'Ar žinote ką reiškia "Rolių Žaidimas" ')}}
     			{{Form::text('roleplay', null, array('class' => 'form-control'))}}
 
-                {{Form::label('rases', 'Išvardinkite visas egzistuojančias rases Alerado Žemėje.')}}
-                {{Form::text('rases', null, array('class' => 'form-control'))}}
+                {{Form::label('kapl', 'Ką planuojate serveryje veikti?')}}
+                {{Form::text('kapl', null, array('class' => 'form-control'))}}
 
-                {{Form::label('kokios', 'Kokios rasės atstovu norėtumėte būti ir kodėl? (Max 500 Simbolių)')}}
-                {{Form::text('kokios', null, array('class' => 'form-control'))}}
+                {{Form::label('kokia', 'Kokią vertę sukursite kitiems serverio žaidėjams? (Max 1000 Simbolių)')}}
+                {{Form::text('kokia', null, array('class' => 'form-control', 'maxlength' => 1000 ))}}
 
-    			{{Form::label('kodel', 'Kodėl norite dalyvauti Alerado Žemės projekte? (Max 500 Simbolių)')}}
-    			{{Form::text('kodel', null, array('class' => 'form-control' ))}}
+    			{{Form::label('kodel', 'Kodėl norite žaisti serveryje? (Max 1000 Simbolių)')}}
+    			{{Form::text('kodel', null, array('class' => 'form-control', 'maxlength' => 1000  ))}}
 
                 {{Form::label('kaip', 'Kaip sužinojote apie šį projektą? Jei Jums Šį rekomendavo žmogus, parašykite jo žaidėjo vardą.')}}
                 {{Form::text('kaip', null, array('class' => 'form-control' ))}}
 
+                {{Form::label('mic', 'Ar turite galimybę kalbėti per kompiuterį? (ar turite mikrofoną?)')}}
+                {{Form::text('mic', null, array('class' => 'form-control' ))}}
+
+                {{Form::label('darbai', 'Jūsų Minecraft darbų albumas ("imgur" svetainės nuoroda)')}}
+                {{Form::text('darbai', null, array('class' => 'form-control' ))}}
+
+                {{Form::label('serv', 'Ar esate žaidę kituose privačiuose serveriuose? Jei taip, parašyk kur')}}
+                {{Form::text('serv', null, array('class' => 'form-control' ))}}
+
+                {{Form::label('content', 'Ar esate turinio kūrėjas? Jei taip, parašykite kanalo pavadinimą')}}
+                {{Form::text('content', null, array('class' => 'form-control' ))}}
+
+                {{Form::label('subs', 'Sekėjų / prenumeratorių skaičius')}}
+                {{Form::number('subs', null, array('class' => 'form-control' ))}}
+                
                 {{Form::label('username', 'Jūsų minecraft paskyros vardas:')}}
                 {{Form::text('username', null, array('class' => 'form-control' ))}}
 

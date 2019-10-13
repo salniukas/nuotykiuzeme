@@ -33,26 +33,6 @@
 						<td><b>El. pašto adresas:</b></td>
 						<td><a href="mailto:{{ $forms->email }}">{{ $forms->email }}</a></td>
 					</tr>
-					<tr>
-						<td><b>Ar žinote ką reiškia "Rolių Žaidimas"?</b></td>
-						<td>{{ $forms->roleplay }}</td>
-					</tr>
-					<tr>
-						<td><b>Išvardinkite visas egzistuojančias rases alerado Žemėje:</b></td>
-						<td>{{ $forms->rases }}</td>
-					</tr>
-					<tr>
-						<td><b>Kokios rasės atstovu norėtumėte būti ir kodėl?</b></td>
-						<td>{{ $forms->kokios }}</td>
-					</tr>
-					<tr>
-						<td><b>Kodėl norite dalyvauti Alerado Žemės projekte?</b></td>
-						<td>{{ $forms->kodel }}</td>
-					</tr>
-					<tr>
-						<td><b>Kaip sužinojote apie šį projektą? Jei Jums Šį rekomendavo žmogus, parašykite jo žaidėjo vardą:</b></td>
-						<td>{{ $forms->kaip }}</td>
-					<tr>
 						<td><b>Pateikimo Data</b></td>
 						<td>{{ $forms->created_at }}</td>
 					</tr>

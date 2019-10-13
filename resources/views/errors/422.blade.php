@@ -69,7 +69,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Hearai viska matė, kaip jūs jau buvote čia..
+                    Azijiečiai viską matė, kaip jūs jau buvote čia..
                 </div>
             </div>
         </div>

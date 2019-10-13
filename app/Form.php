@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Form extends Model
 {
    protected $fillable = [
-        'name', 'age', 'discord_id', 'email', 'roleplay', 'rases', 'kokios', 'kodel', 'kaip', 'username'];
+        'name', 'age', 'discord_id', 'email', 'roleplay', 'kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username'];
 
    public function votes()
     {

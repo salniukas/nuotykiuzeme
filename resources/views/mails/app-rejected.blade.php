@@ -10,15 +10,7 @@
                 
                 <tbody><tr>
                   <td align="center" valign="top">
-                    <table border="0" cellpadding="0" cellspacing="0" height="90" width="100%" style="background-color:#fff;background-image:none;background-repeat:repeat;background-position:top left">
-                      <tbody><tr>
-                        <td align="center" valign="middle">
-                          <a href="https://tryskubai.lt" target="_blank">
-                            <img src="https://tryskubai.lt/images/Logo_T.png" width="202" height="202" alt="TrysKubai">
-                          </a>
-                        </td>
-                      </tr>
-                    </tbody></table>
+                    <table border="0" cellpadding="0" cellspacing="0" height="90" width="100%" style="background-color:#fff;background-image:none;background-repeat:repeat;background-position:top left"></table>
                   </td>
                 </tr>
                 <tr>
@@ -27,7 +19,7 @@
                     <tbody><tr>
                       <td align="center" valign="middle">
                         <div>
-                          <p>Jūsų Anketa Alerado žemėje, Buvo <span style="color: red;">Atmesta.</span><br/>Linkime sekmės bandant kita kartą.<br>Kilus problemoms ar klausimams kreiptis Lukas@tryskubai.lt<br>
+                          <p>Jūsų anketa „Nuotykių Žemėje” buvo <span style="color: red;">Atmesta.</span><br/>Linkime sekmės bandant kita kartą.<br>Kilus problemoms ar klausimams kreiptis Lukas@tryskubai.lt<br>
                           Į klausimus kodėl atmesta. Nebus atsakyta. </p>
                         </div>
                       </td>
@@ -48,7 +40,7 @@
                   </td>
                   <td align="right" valign="top">
                     
-                    © 2017 TrysKubai
+                    © 2019 Nuotykių Žemė
                   </td>
                 </tr>
               </tbody></table>

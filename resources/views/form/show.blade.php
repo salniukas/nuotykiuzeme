@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@php
-	$discord = Auth::user()->discord_id;
-@endphp
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -41,20 +39,40 @@
 						<td>{{ $forms->roleplay }}</td>
 					</tr>
 					<tr>
-						<td><b>Kokios rases yra Alerade?</b></td>
-						<td>{{ $forms->rases }}</td>
+						<td><b>Ką planuojate serveryje veikti?</b></td>
+						<td>{{ $forms->kapl }}</td>
 					</tr>
 					<tr>
-						<td><b>Kokios rases atstovas noretu būti ir kodėl?</b></td>
-						<td>{{ $forms->kokios }}</td>
+						<td><b>Kokią vertę sukursite kitiems serverio žaidėjams?</b></td>
+						<td>{{ $forms->kokia }}</td>
 					</tr>
 					<tr>
-						<td><b>Kodel nori į aleradą</b></td>
+						<td><b>Kodel nori į serverį</b></td>
 						<td>{{ $forms->kodel }}</td>
 					</tr>
 					<tr>
-						<td><b>Kaip suzinojo apie Alerada arba Kas pakviete:</b></td>
+						<td><b>Kaip suzinojo apie Serverį arba Kas pakviete:</b></td>
 						<td>{{ $forms->kaip }}</td>
+					<tr>
+					<tr>
+						<td><b>Ar turi mikrafoną?</b></td>
+						<td>{{ $forms->mic }}</td>
+					<tr>
+					<tr>
+						<td><b>Jūsų Minecraft darbų albumas</b></td>
+						<td>{{ $forms->darbai }}</td>
+					<tr>
+					<tr>
+						<td><b>Ar esate žaidę kituose privačiuose serveriuose?</b></td>
+						<td>{{ $forms->serv }}</td>
+					<tr>
+					<tr>
+						<td><b>Ar esate turinio kūrėjas? Jei taip, parašykite kanalo pavadinimą</b></td>
+						<td>{{ $forms->content }}</td>
+					<tr>
+					<tr>
+						<td><b>Sekėjų / prenumeratorių skaičius</b></td>
+						<td>{{ $forms->subs }}</td>
 					<tr>
 						<td><b>Pateikimo Data</b></td>
 						<td>{{ $forms->created_at }}</td>
@@ -65,22 +83,35 @@
 					</tr>
 					<tr>
 						<td><b>Balsų Kiekis</b></td>
-						<td>{{ $balsai }}</td>
+						<td>{{ $balsaiu }}/-{{ $balsaip }}</td>
+					</tr>
+					<tr>
+					<td>						
+						@if(Auth::user()->isAdmin || Auth::user()->isSupport)
+					 		<a href="/atranka/trash/{{ $forms->id }}"><button class="btn btn-s btn-info pull-left clearfix" style="background-color: red; border-color: none;  margin-right: 15px;">Šlamštas</button></a>
+					 		<a href="/atranka/approve/{{ $forms->id }}"><button class="btn btn-s btn-info pull-left clearfix" style="background-color: green; border-color: none;">II Etapas</button></a>
+					 	@if($forms->accepted)
+					 		<a href="/atranka/aleradas/{{ $forms->id }}"><button class="btn btn-s btn-info pull-left clearfix">Jau Alerade</button></a>
+					 	@endif
+					 	@endif
+					 <td>
+					 	@if(Auth::user()->isAleradas)
+					 		@php
+								$discord = Auth::user()->discord_id;
+					  		@endphp
+					</tr>
+					<tr>
+					  	<td>
+					 		@if(is_null($voted))
+					 			<a href="/anketos/vote/{{ $forms->id }}"><button class="btn btn-s btn-info pull-left clearfix" style="background-color: green; margin-right: 15px; border-color: none;">Už</button></a>
+					 			<a href="/anketos/vote2/{{ $forms->id }}"><button class="btn btn-s btn-info pull-left clearfix" style="background-color: red; border-color: none;">Prieš</button></a>
+					 		@else
+					 			Jau balsavote
+					 		@endif
+					 @endif
+						<td>
 					</tr>
 				</tbody>
-					 </tr>
-					 @if(Auth::user()->isAdmin || Auth::user()->isSupport)
-					 <tr>
-					 	<button class="btn btn-xs btn-info pull-right clearfix"><a href="/atranka/trash/{{ $forms->id }}">Šlamštas</a></button>
-					 	<button class="btn btn-xs btn-info pull-right clearfix"><a href="/atranka/approve/{{ $forms->id }}">II Etapas</a></button>
-					 	<button class="btn btn-xs btn-info pull-right clearfix"><a href="/atranka/aleradas/{{ $forms->id }}">Jau Alerade</a></button>
-					 @endif
-					 @if(Auth::user()->isAleradas)
-					 	@if($fafa['voter_discord'] != $discord)
-					 		<button class="btn btn-xs btn-info pull-right clearfix"><a href="/anketos/vote/{{ $forms->id }}">+1</a></button>
-					 	@endif
-					 @endif
-					 </tr>
 				</table>
 				</table>
 			</div>

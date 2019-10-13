@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     public function redirectToProvider()
     {
-        return \Socialite::driver('discord')->scopes(['guilds.join','connections'])->redirect();
+        return \Socialite::driver('discord')->redirect();
     }
 
     public function handleProviderCallback()

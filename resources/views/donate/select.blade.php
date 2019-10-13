@@ -5,15 +5,15 @@
 		<div class="col-md-8 col-md-offset-2">
             <div class="panel-heading">Paysera</div>
             <div class="panel-body">
-    			{!! Form::open(['route' => 'dstore']) !!}
-        			{{Form::label('username', 'Jūsų Vardas:')}}
-        			{{Form::text('username', null, array('class' => 'form-control'))}}
+    			{!! Form::open(['route' => 'paysera-redirect']) !!}
+        			{{Form::label('username', 'Jūsų vartotojo Vardas:')}}
+        			{{Form::text('username', null, array('class' => 'form-control', 'style' => 'width: 150px;'))}}
 
         			{{Form::label('email', 'Jūsų El.Paštas:')}}
-        			{{Form::text('email', null, array('class' => 'form-control'))}}
+        			{{Form::text('email', null, array('class' => 'form-control', 'style' => 'width: 150px;'))}}
 
-        			{{Form::label('amount', 'Paramos Lygis:')}}<br>
-        			{{Form::select('amount', array('100' => 'Pirmas Lygis(1€)', '500' => 'Antras Lygis(5€)', '1000' => 'Trečias Lygis(10€)', '1500' => 'Ketvirtas Lygis(15€)'))}}
+        			{{Form::label('amount', 'Žaliosios zonos prenumeratos laikotarpis:')}}<br>
+        			{{Form::select('amount', array('500' => 'Vienas mėnesis(5€)', '1000' => 'Du mėnesiai(10€)', '1500' => 'Trys mėnesiai(15€)'))}}
 
  {{--                {{Form::label('type', 'Mokejimo būdas:')}}
                     {{Form::select('type', array('paypal' => 'PayPal', 'paysera' => 'PaySera'))}} --}}
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<hr style="height: 20px; color: black;">
-        <div class="row">
+{{--         <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel-heading">PayPal</div>
             <div class="panel-body">
@@ -51,5 +51,5 @@
                 @include('layouts.errors')
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

@@ -41,15 +41,20 @@ class FormsController extends Controller
    			'discord_id' => 'required',
    			'email' => 'email|required',
    			'roleplay' => 'required',
-   			'rases' => 'required',
-   			'kokios' => 'required',
+   			'kapl' => 'required',
+   			'kokia' => 'required',
    			'kodel' => 'required|',
             'kaip' => 'required',
+            'mic' => 'required',
+            'darbai' => 'required',
+            'serv' => 'required',
+            'content' => 'required',
+            'subs' => 'required',
    			'username' => 'required'
    		]);
 
    		//Store
-   		 Form::create(request(['name', 'age', 'discord_id', 'email', 'roleplay', 'rases', 'kokios', 'kodel', 'kaip', 'username']));
+   		 Form::create(request(['name', 'age', 'discord_id', 'email', 'roleplay', 'kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username']));
 
    		 $request->session()->flash('success', 'Anketa gauta');
 
@@ -80,7 +85,7 @@ class FormsController extends Controller
 
    public function lists()
    {
-      if (Auth::user()->isSupport || Auth::user()->isAdmin) {
+      if (Auth::user()->isSupport || Auth::user()->isAdmin || Auth::user()->isAleradas) {
 
          $forms = Form::get()->where('sent', 0);
 
@@ -112,10 +117,12 @@ class FormsController extends Controller
    {
       if (Auth::user()->isSupport || Auth::user()->isAdmin || Auth::user()->isAleradas) {
             $forms = Form::find($id);
-            $fafa = Forms_vote::where('voted_for', $id)->first();
-            $balsai = Forms_vote::where('voted_for', $id)->count();
+            // $fafa = Forms_vote::where('voted_for', $id)->all();
+            $voted = Forms_vote::where('voter_discord', Auth::user()->discord_id)->where('voted_for', $id)->first();
+            $balsaiu = Forms_vote::where('voted_for', $id)->where('reason', 'Už')->count();
+            $balsaip = Forms_vote::where('voted_for', $id)->where('reason', 'Prieš')->count();
 
-            return view('form.show', ['forms' => $forms, 'fafa' => $fafa, 'balsai' => $balsai]);
+            return view('form.show', ['forms' => $forms, 'voted' => $voted, 'balsaiu' => $balsaiu, 'balsaip' => $balsaip]);
       }else{
       	abort(403);
       }
@@ -209,8 +216,25 @@ class FormsController extends Controller
          if ($form['voter_discord'] != Auth::user()->discord_id) {
             $voter = Auth::user()->discord_id;
             $voter_name = Auth::user()->username;
+            $reason = "Už";
 
-            Forms_vote::create(['voted_for' => $id, 'voter_discord' => $voter, 'voter_name' => $voter_name]);
+            Forms_vote::create(['voted_for' => $id, 'voter_discord' => $voter, 'voter_name' => $voter_name, 'reason' => $reason]);
+         }
+      return redirect("/anketos");
+   }
+}
+
+   public function vote2($id)
+   {
+      if(Auth::user()->isAleradas){
+         $form = Forms_vote::where('voted_for', $id)->first();
+
+         if ($form['voter_discord'] != Auth::user()->discord_id) {
+            $voter = Auth::user()->discord_id;
+            $voter_name = Auth::user()->username;
+            $reason = "Prieš";
+
+            Forms_vote::create(['voted_for' => $id, 'voter_discord' => $voter, 'voter_name' => $voter_name, 'reason' => $reason]);
          }
       return redirect("/anketos");
    }
