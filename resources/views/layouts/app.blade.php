@@ -34,9 +34,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-left" href="{{ url('/') }}">
+{{--                     <a class="navbar-left" href="{{ url('/') }}">
                         <h2>Nuotykių Žemė</h2>
-                    </a>
+                    </a> --}}
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

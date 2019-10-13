@@ -1,11 +1,3 @@
-body{
-	background-image: url(/img/players_bg.png);
-	background-position: center;
-	background-repeat: none;
-	background-attachment: fixed;
-	background-color: black;
-}
-
 img{
 	margin-bottom: 35px;
 	margin-right: 25px;
@@ -13,5 +5,5 @@ img{
 }
 
 img:hover{
-	opacity: 0.8;
+	opacity: 0.5;
 }

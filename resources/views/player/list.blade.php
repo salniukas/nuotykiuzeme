@@ -2,6 +2,17 @@
 
 @section('head')
 	<link rel="stylesheet" type="text/css" href="./css/playerlist.css">
+	<style type="text/css">
+		body{
+			background-image: url(/img/players_bg.png) no-repeat;
+            background-size:cover;
+            background-position: center;
+            color: #fff;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            margin: 0;
+		}
+	</style>
 @endsection
 
 @section('content')

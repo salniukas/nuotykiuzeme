@@ -1,5 +1,43 @@
 @extends('layouts.app')
+@section('head')
 
+  <style type="text/css">
+    body{
+      background-image: url(/img/anketos.png);
+      color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 100;
+      margin: 0;
+      /* Full height */
+      /* Center and scale the image nicely */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .section{
+      margin-left: 13%;
+    }
+    .migtuk {
+      background-color:#a1a1a1;
+      border-radius:10px;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Courier New;
+      font-size:21px;
+      padding:16px 59px;
+      text-decoration:none;
+      /*text-shadow:0px 1px 0px #d1f5cc;*/
+    }
+    .migtuk:hover {
+      background-color:#a1a1a1;
+    }
+    .migtuk:active {
+      position:relative;
+      top:1px;
+    }
+
+  </style>
+@endsection
 @section('content')
 <div class="section">
       <div class="container">
@@ -114,7 +152,7 @@
               <p>Jei manai, kad esi pasiruošės, tada.. lėk pildyti Anketos!</p>
           </div>
         </div>
-        <center><a href="{{ route('pildyti') }}"><button type="button" class="btn btn-lg btn-success">Pildyti!</button></a></center>
+        <center><a href="{{ route('pildyti') }}"><button type="button" class="migtuk">PILDYTI</button></a></center>
       </div>
     </div>
 @endsection
