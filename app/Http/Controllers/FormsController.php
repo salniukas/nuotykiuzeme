@@ -40,7 +40,6 @@ class FormsController extends Controller
    			'age' => 'required',
    			'discord_id' => 'required',
    			'email' => 'email|required',
-   			'roleplay' => 'required',
    			'kapl' => 'required',
    			'kokia' => 'required',
    			'kodel' => 'required|',
@@ -54,7 +53,7 @@ class FormsController extends Controller
    		]);
 
    		//Store
-   		 Form::create(request(['name', 'age', 'discord_id', 'email', 'roleplay', 'kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username']));
+   		 Form::create(request(['name', 'age', 'discord_id', 'email', 'kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username']));
 
    		 $request->session()->flash('success', 'Anketa gauta');
 
@@ -173,7 +172,7 @@ class FormsController extends Controller
          $player = Form::where('id', $id)->first();
 
          $player->operator = Auth::user()->username;
-         $player->accepted = 0;
+         $player->accepted = 1;
          $player->rejected = 0;
          $player->aleradas = 1;
          $player->save();

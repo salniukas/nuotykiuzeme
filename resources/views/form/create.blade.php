@@ -23,9 +23,6 @@
     			{{Form::label('email', 'Jūsų El.Paštas:')}}
     			{{Form::email('email', $mail, array('class' => 'form-control'))}}
 
-    			{{Form::label('roleplay', 'Ar žinote ką reiškia "Rolių Žaidimas" ')}}
-    			{{Form::text('roleplay', null, array('class' => 'form-control'))}}
-
                 {{Form::label('kapl', 'Ką planuojate serveryje veikti?')}}
                 {{Form::text('kapl', null, array('class' => 'form-control'))}}
 

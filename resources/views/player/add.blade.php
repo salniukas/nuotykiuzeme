@@ -27,9 +27,6 @@
                 {{Form::label('veikla', 'Jūsų Veikla:')}}
                 {{Form::text('veikla', null, array('class' => 'form-control', 'placeholder'=>'Twitch/Youtube/Dizainas ir t.t'))}}
 
-                {{Form::label('rase', 'Jūsų Frakciją:')}}
-                {{ Form::select('rase', array('Koboldai' => 'Koboldai', 'Ištremtieji' => 'Istremtieji', 'Xowoxai' => 'Xowoxai', 'Azija' => 'Azija', 'Atlanta' => 'Atlanta'), array('class' => 'form-control'))  }}<br>
-
                 {{Form::label('youtube', 'Jūsų Youtube Kanalas(Jei neturit palikti tuščia):')}}
                 {{Form::text('youtube', null, array('class' => 'form-control', 'placeholder'=>'https://www.youtube.com/user/thesalniukas' ))}}
 
