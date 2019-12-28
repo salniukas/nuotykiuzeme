@@ -100,6 +100,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
+            <h3>Ar galima pasikeisti frakciją?</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Taip galima</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
             <h3>Kur rasti Discord ID?</h3>
           </div>
         </div>

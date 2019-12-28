@@ -72,44 +72,4 @@ Route::get('donate/select', 'OrderController@donate')->name('dselect');
 Route::post('/paysera/redirect', 'PayseraGatewayController@redirect')->name('paysera-redirect');
 Route::get('/paysera/callback', 'PayseraGatewayController@callback')->name('paysera-callback');
 Route::get('/uzsakymas-pavyko', function () { return view('donate.accept'); });
-Route::get('/uzsakymas-nepavyko', function () { return view('donate.cancel'); });Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
-
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
-
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
-
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
-
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
-});
-
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
-});
-
+Route::get('/uzsakymas-nepavyko', function () { return view('donate.cancel'); });

@@ -29,6 +29,6 @@ class FormAccept extends Mailable
     public function build()
     {
 
-        return $this->subject("Dėl jūsų anketos į Nuotykių Žemę")->Priority(1)->view('mails.app-accepted');
+        return $this->subject("Dėl jūsų anketos į Nuotykių Žemę")->Priority(2)->view('mails.app-accepted');
     }
 }

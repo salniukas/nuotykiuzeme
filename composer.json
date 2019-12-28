@@ -8,7 +8,6 @@
         "php": ">=7.0.0",
         "d3lph1/minecraft-rcon-manager": "~1.0",
         "fideloper/proxy": "~3.3",
-        "laravel-frontend-presets/material-dashboard": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5",
@@ -28,14 +27,12 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/",
-            "LaravelFrontendPresets\\MaterialPreset\\": "presets/material/src"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/",
-            "LaravelFrontendPresets\\MaterialPreset\\": "presets/material/src"
+            "Tests\\": "tests/"
         }
     },
     "extra": {

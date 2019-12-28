@@ -7,6 +7,7 @@
 			background-image: url(/img/players_bg.png) no-repeat;
             background-size:cover;
             background-position: center;
+            color: #fff;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
             margin: 0;
@@ -67,6 +68,10 @@
 						<td>{{ $player->veikla }}</td>
 					</tr>
 					<tr>
+						<td>Rase</td>
+						<td>{{ $player->rase }}</td>
+					</tr>
+					<tr>
 						<td>Youtube</td>
 						@if ($player->youtube == "-")
 						<td>{{$player->youtube}}</td>
@@ -102,6 +107,10 @@
 					<tr>
 						<td>Discord</td>
 						<td>{{ $player->discord }}</td>
+					</tr>
+					<tr>
+						<td>Rase</td>
+						<td>{{ $player->rase }}</td>
 					</tr>
 					<tr>
 						<td>Youtube</td>

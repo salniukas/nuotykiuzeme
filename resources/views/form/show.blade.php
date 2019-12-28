@@ -35,6 +35,10 @@
 						<td><a href="mailto:{{ $forms->email }}">{{ $forms->email }}</a></td>
 					</tr>
 					<tr>
+						<td><b>Ar Žino kas yra roleplay?</b></td>
+						<td>{{ $forms->roleplay }}</td>
+					</tr>
+					<tr>
 						<td><b>Ką planuojate serveryje veikti?</b></td>
 						<td>{{ $forms->kapl }}</td>
 					</tr>
