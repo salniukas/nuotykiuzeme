@@ -22,23 +22,28 @@ Route::get('donate', 'PaymentController@index')->name('donate');
 
 //Anketos
 
-Route::get('atranka', 'FormsController@index')->name('atranka');
-Route::post('atranka/store', 'FormsController@store')->name('atrankaS');
+Route::get('atranka', 'FormsController@create')->name('Atranka');
+Route::post('anketele/store', 'FormsController@store')->name('atrankaS');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('manoanketos', 'FormsController@Mano')->name('ManoAnketos');
 	Route::get('atranka/pildyti', 'FormsController@create')->name('pildyti');
 	Route::get('manoanketos/{id}', 'FormsController@Manoa')->name('ManoAnketa');
-	Route::get('anketos', 'FormsController@lists')->name('anketos');
+
+	Route::get('anketos', 'HomeController@Anketos')->name('Anketos');
+	Route::get('anketos/atmestos', 'HomeController@Atmestos')->name('Atmestos-Anketos');
+	Route::get('anketos/patvirtintos', 'HomeController@Patvirtintos')->name('patvirtintos-anketos');
+
 	Route::get('anketos/email', 'FormsController@response')->name('anketosMail');
-	Route::get('anketos/approved', 'FormsController@Elists')->name('anketosApprove');
-	Route::get('anketos/etapas', 'FormsController@Alists')->name('anketosEtapas');
+
 	Route::get('atranka/trash/{id}', 'FormsController@trash');
 	Route::get('atranka/approve/{id}', 'FormsController@etapas');
 	Route::get('atranka/aleradas/{id}', 'FormsController@alerade');
-	Route::get('anketos/{id}', 'FormsController@show')->name('anketa');
+
 	Route::get('anketos/vote/{id}', 'FormsController@vote');
 	Route::get('anketos/vote2/{id}', 'FormsController@vote2');
+	Route::get('anketos/show/{id}', 'HomeController@Show')->name('show-anketa');
+
 });
 
 //Video & Žaidėjai
@@ -73,3 +78,41 @@ Route::post('/paysera/redirect', 'PayseraGatewayController@redirect')->name('pay
 Route::get('/paysera/callback', 'PayseraGatewayController@callback')->name('paysera-callback');
 Route::get('/uzsakymas-pavyko', function () { return view('donate.accept'); });
 Route::get('/uzsakymas-nepavyko', function () { return view('donate.cancel'); });
+
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('table-list', 'HomeController@players')->name('table');
+
+	Route::get('typography', function () {
+		return view('pages.typography');
+	})->name('typography');
+
+	Route::get('icons', function () {
+		return view('pages.icons');
+	})->name('icons');
+
+	Route::get('map', function () {
+		return view('pages.map');
+	})->name('map');
+
+	Route::get('notifications', function () {
+		return view('pages.notifications');
+	})->name('notifications');
+
+	Route::get('rtl-support', function () {
+		return view('pages.language');
+	})->name('language');
+
+	Route::get('upgrade', function () {
+		return view('pages.upgrade');
+	})->name('upgrade');
+});
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+});

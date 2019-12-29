@@ -7,6 +7,9 @@ use App\Order;
 use \DiscordWebhooks\Client;
 use \DiscordWebhooks\Embed;
 use Thedudeguy\Rcon;
+use App\User;
+use Carbon\Carbon;
+
 class PayseraGatewayController extends Controller
 {
     public function redirect (Request $request)
@@ -56,7 +59,11 @@ class PayseraGatewayController extends Controller
 		$orderid = $params['orderid'];
 		$order = Order::where('id', $orderid)->first();
 		$order->approved = "done";
+		$order->until = Carbon::now()->addMonths(1);
 		$order->save();
+		$user = User::where('email', $p_email)->first();
+		$user->isDonator = 1;
+		$user->save();
 
 		$nick = $order['username'];
         $host = env('Server_IP');
@@ -67,8 +74,7 @@ class PayseraGatewayController extends Controller
 
 	        if ($rcon->connect())
 	        {
-	          $rcon->sendCommand('whitelist add '.$nick);
-	          $rcon->sendCommand('broadcast Serverį Paremė ir prisijungė prie Žaliosios Zonos:'.$nick);
+	          $rcon->sendCommand('say Serverį Paremė: '.$nick);
 	        }
 		return response('OK', 200);
 		return view('info.accept');

@@ -23,7 +23,7 @@ class PlayerAddController extends Controller
   {
       $userID = Auth::user()->discord_id;
       if (Auth::user()->isAleradas && !Auth::user()->isAdded) {
-         return view('player.add');
+         return view('profile.edit3');
       }elseif(Auth::user()->isAdded){
         abort(422);
       }else{
@@ -40,16 +40,19 @@ class PlayerAddController extends Controller
         'email' => 'email|required|max:255',
         'discord' => 'required|max:255',
         'age' => 'required|max:255',
-        'veikla' => 'required|max:255',
-        'rase' => 'required|max:255'
    		]);
       
 
    		//Store
-   		Player::create(request(['name', 'username', 'email', 'discord', 'age', 'veikla', 'rase', 'youtube', 'twitch', 'discord_id']));
+   		Player::create(request(['name', 'username', 'email', 'discord', 'age', 'youtube', 'twitch', 'discord_id']));
    		$user = User::where('discord_id', $request->discord_id)->first();
       	$user->isAdded = 1;
       	$user->save();
+      $player = Player::orderBy('created_at', 'DESC')->first();
+      if (Auth::user()->isDonator) {
+        $player->donator = 1;
+        $player->save();
+      }
       //Add to Whitelist
         $username = $request->username;
         $rase = $request->rase;

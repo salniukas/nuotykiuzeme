@@ -23,12 +23,7 @@ class FormsController extends Controller
 
    public function create()
    {
-   	  if (!Auth::check()) {
-   	  	Session::flash('message', 'Norint Pildyti anketą reikia prisijungti.');
-   	  	return Redirect('/login');
-   	  }else{
-   	  	return view('form.create');
-        }
+   	return view('form.create');
    }
 
 
@@ -40,7 +35,6 @@ class FormsController extends Controller
    			'age' => 'required',
    			'discord_id' => 'required',
    			'email' => 'email|required',
-   			'roleplay' => 'required',
    			'kapl' => 'required',
    			'kokia' => 'required',
    			'kodel' => 'required|',
@@ -54,11 +48,11 @@ class FormsController extends Controller
    		]);
 
    		//Store
-   		 Form::create(request(['name', 'age', 'discord_id', 'email', 'roleplay', 'kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username']));
+   		 Form::create(request(['name', 'age', 'discord_id', 'email','kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username']));
 
    		 $request->session()->flash('success', 'Anketa gauta');
 
-   		 return redirect('manoanketos');
+   		 return redirect('home');
 
    }
    public function Mano()

@@ -1,22 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('Nuotykių Žemė')])
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 col-md-offset-3">
-            <div class="panel panel-default">
-            @if(Request::session()->has('message'))
-                <div class="alert alert-danger">
-                    {{ Request::session()->get('message', 'default') }}
-                </div>
-            @endif
-   <div class="panel-heading">Prisijungti</div>
-                <div class="panel-body">
-                    <a class="btn btn-primary" href="{{ route('auth.discord') }}">Prisijungti Su Discord</a><br><br>
-                    <a href="../private">Prisijungdami sutinkate su mūsų privatumo politiką</a>
-                </div>
-            </div>
-        </div>
+<div class="container" style="height: auto;">
+  <div class="row align-items-center">
+    <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
+      <h3>{{ __('Prisijunkite prie serverio') }} </h3>
     </div>
+    <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+        <div class="card card-login card-hidden mb-3">
+          <div class="card-header card-header-primary text-center">
+            <h4 class="card-title"><strong>{{ __('Prisijungti') }}</strong></h4>
+            <div class="social-line"><a href="{{ route('auth.discord') }}" class="btn btn-just-icon btn-link btn-white">
+                <i class="fab fa-discord"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection
