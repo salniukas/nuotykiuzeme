@@ -1,34 +1,48 @@
 @extends('layouts.app', ['activePage' => 'icons', 'titlePage' => __('Icons')])
 
 @section('content')
-<div class="content">
-  <div class="container-fluid">
+  <div class="content">
     <div class="container-fluid">
-      <div class="card card-plain">
-        <div class="card-header card-header-primary">
-          <h4 class="card-title">Material Design Icons</h4>
-          <p class="card-category">Handcrafted by our friends from
-            <a target="_blank" href="https://design.google.com/icons/">Google</a>
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card-body">
-              <div class="iframe-container d-none d-lg-block">
-                <iframe src="https://design.google.com/icons/">
-                  <p>Your browser does not support iframes.</p>
-                </iframe>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <form method="post" action="{{ route('paysera-redirect') }}" autocomplete="off" class="form-horizontal" id="prof">
+            @csrf
+            @method('POST')
+
+            <div class="card ">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">{{ __('Paskyros Pirkimas') }}</h4>
+                <p class="card-category">Čia galite įsigyti minecraft paskyras per Paysera platfomą</p>
               </div>
-              <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
-                <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google. Check the
-                  <a href="https://design.google.com/icons/" target="_blank">Material Icons</a>
-                </h5>
+              <div class="card-body ">
+                @if (session('status'))
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <i class="material-icons">close</i>
+                        </button>
+                        <span>{{ session('status') }}</span>
+                      </div>
+                    </div>
+                  </div>
+                @endif
+                <div class="row">
+                  <label class="col-sm-2 col-form-label">{{ __('Jūsų El.Paštas:') }}</label>
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <input class="form-control" name="email" id="email" type="text" value="" required/>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer ml-auto mr-auto d-flex justify-content-center">
+                  <button type="submit"  class="btn btn-primary ">{{ __('Apmokėti') }}</button>
+                </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-</div>
 @endsection

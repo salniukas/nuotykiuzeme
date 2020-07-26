@@ -1,0 +1,1 @@
+console.log('%c Made by Šalna ', 'background: black; color: white')

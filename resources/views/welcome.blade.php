@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -9,11 +9,13 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/aos.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
 
         <!-- Styles -->
         <style>
             html, body {
-                background-image: url(/img/Pagrindinis.png);
+                background-image: url(/img/fonas.gif);
                 background-size:cover;
                 background-position: center;
                 color: #fff;
@@ -70,7 +72,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Serveris</a>
+                        <a href="{{ url('/home') }}">Meniu</a>
                     @else
                         <a href="{{ route('login') }}">Prisijungti</a>
                     @endauth
@@ -79,15 +81,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Nuotykių Žemė
+                    <img data-aos="fade-left" class="textas" src="img/text.png">
                 </div>
 
                 <div class="links">
-                    <a href="/donate/select">Žalioji Zona</a>
+                    <a href="/icons" >Parama</a>
                     <a href="/atranka">Atranka</a>
-                    <a href="/video">Video</a>
                     @auth
-                        <a href="/home">Serverio Info</a>
+                        <a href="/home">Meniu</a>
                     @endauth
                 </div>
             </div>
@@ -95,7 +96,17 @@
         <script type="text/javascript" charset="utf-8">
 						var wtpQualitySign_projectId  = 153102;
 						var wtpQualitySign_language   = "lt";
-						</script><script src="https://bank.paysera.com/new/js/project/wtpQualitySigns.js" type="text/javascript" charset="utf-8"></script>
+						</script><script src="https://bank.paysera.com/new/js/project/wtpQualitySigns.js" type="text/javascript" charset="utf-8">
+						
+		</script>
+							<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+					<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+					<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+					<script src="js/firefly.js" type="text/javascript"></script>
+					<script>
+						AOS.init({
+						});
+					</script>
 					
     </body>
 </html>

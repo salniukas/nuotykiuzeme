@@ -56,6 +56,7 @@
                     </td>
                   </tr>
                   @endforeach
+                  {{ $players->links() }}
                 </tbody>
               </table>
             </div>

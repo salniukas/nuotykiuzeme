@@ -1,0 +1,59 @@
+.header {
+    height: 7.5vh;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.header .links {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+    height: 5vh;
+}
+
+.header a {
+    color: white;
+    margin-right: 75px;
+    font-family: FuturaPTLight;
+    font-size: 1.5em;
+}
+
+.header a span {
+    color: #66FFC4;
+    position: relative;
+    right: 10px;
+    bottom: 7.5px;
+    z-index: -1;
+    font-size: 0.7em;
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 7.5%;
+    height: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .logo {
+        position: static;
+        display: block;
+        width: 15%;
+        margin: auto;
+    }
+    .links {
+        width: 100%;
+        text-align: center;
+        position: static;
+        margin-top: 15%;
+    }
+    .header a {
+        margin-right: 0;
+        margin: 0;
+        font-size: 5vw;
+        overflow: hidden
+    }
+}

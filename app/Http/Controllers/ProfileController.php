@@ -8,6 +8,11 @@ use App\Player;
 use Auth;
 use App\user;
 
+use \D3lph1\MinecraftRconManager\DefaultConnector;
+use \D3lph1\MinecraftRconManager\Exceptions\ConnectSocketException;
+use \D3lph1\MinecraftRconManager\Exceptions\AccessDenyException;
+use Thedudeguy\Rcon;
+
 class ProfileController extends Controller
 {
     /**
@@ -35,7 +40,7 @@ class ProfileController extends Controller
         // $player = Player::where('discord_id', $user)->first();
         // Player::find($player->id)->update($request->all());
 
-        return back()->withStatus(__('Profile successfully updated.'));
+        // return back()->withStatus(__('Profile successfully updated.'));
 
         $user = Auth::user()->discord_id;
         $player = Player::where('discord_id', $user)->first();
@@ -59,7 +64,6 @@ class ProfileController extends Controller
           $player->email = $request->get('email');
           $player->discord = $request->get('discord');
           $player->age = $request->get('age');
-          $player->veikla = $request->get('veikla');
           $player->youtube = $request->get('youtube');
           $player->twitch = $request->get('twitch');
           $player->save();

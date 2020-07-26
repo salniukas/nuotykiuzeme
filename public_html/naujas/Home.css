@@ -1,0 +1,444 @@
+.mediaViewInfo {
+	--web-view-name: Home;
+	--web-view-id: Home;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Home;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Home {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Home;
+	--web-view-id: Home;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes  {
+
+
+}
+#ID2020_05_09_12_16_13 {
+	position: absolute;
+	width: 1920px;
+	height: 1128px;
+	left: 0px;
+	top: -19px;
+	overflow: visible;
+}
+#Rectangle_1 {
+	opacity: 0.58;
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1080px;
+	left: 0px;
+	top: 0px;
+}
+.Rectangle_2_gk {
+	position: absolute;
+	overflow: visible;
+	width: 1932px;
+	height: 694px;
+	left: 0px;
+	top: 386px;
+}
+#Nuotyki___eme1 {
+	position: absolute;
+	width: 514px;
+	height: 514px;
+	left: 703px;
+	top: 156px;
+	overflow: visible;
+}
+#Nuotyki___em_ {
+	position: absolute;
+	left: 684px;
+	top: 507px;
+	overflow: visible;
+	width: 555px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 69px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Presti_inis_Minecraft_Lietuvi_ {
+	position: absolute;
+	left: 682px;
+	top: 598px;
+	overflow: visible;
+	width: 552px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+.Rectangle_3 {
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	height: 57px;
+	left: 718px;
+	top: 670px;
+}
+.Rectangle_19 {
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	height: 57px;
+	left: 852px;
+	top: 764px;
+}
+.Rectangle_9 {
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	height: 57px;
+	left: 985px;
+	top: 670px;
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 59px;
+	height: 57px;
+	left: 718px;
+	top: 670px;
+}
+.Rectangle_20 {
+	position: absolute;
+	overflow: visible;
+	width: 59px;
+	height: 57px;
+	left: 852px;
+	top: 764px;
+}
+.Rectangle_10 {
+	position: absolute;
+	overflow: visible;
+	width: 59px;
+	height: 57px;
+	left: 985px;
+	top: 670px;
+}
+#file {
+	opacity: 0.64;
+	position: absolute;
+	width: 25.467px;
+	height: 31.374px;
+	left: 734.405px;
+	top: 683.323px;
+	overflow: visible;
+}
+.Path_1 {
+	overflow: visible;
+	position: absolute;
+	width: 25.467px;
+	height: 31.374px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_2 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 5.776px;
+	left: 4.553px;
+	top: 13.783px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_3 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 5.776px;
+	left: 4.553px;
+	top: 21.659px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_4 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 13.783px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_5 {
+	overflow: visible;
+	position: absolute;
+	width: 9.714px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 17.721px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_6 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 21.659px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_7 {
+	overflow: visible;
+	position: absolute;
+	width: 9.714px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 25.597px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_8 {
+	overflow: visible;
+	position: absolute;
+	width: 6.761px;
+	height: 1.838px;
+	left: 4.553px;
+	top: 4.923px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_9 {
+	overflow: visible;
+	position: absolute;
+	width: 9.714px;
+	height: 1.838px;
+	left: 4.553px;
+	top: 8.861px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_10 {
+	opacity: 0.51;
+}
+.Path_10 {
+	overflow: visible;
+	position: absolute;
+	width: 157.709px;
+	height: 56.747px;
+	left: 777px;
+	top: 670.253px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_15 {
+	opacity: 0.51;
+}
+.Path_15 {
+	overflow: visible;
+	position: absolute;
+	width: 157.709px;
+	height: 56.747px;
+	left: 911px;
+	top: 764.253px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_13 {
+	opacity: 0.51;
+}
+.Path_13 {
+	overflow: visible;
+	position: absolute;
+	width: 157.709px;
+	height: 56.747px;
+	left: 1044px;
+	top: 670.253px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Atranka {
+	position: absolute;
+	left: 802px;
+	top: 685px;
+	overflow: visible;
+	width: 104px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Parama {
+	position: absolute;
+	left: 936px;
+	top: 779px;
+	overflow: visible;
+	width: 92px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Meniu {
+	position: absolute;
+	left: 1087px;
+	top: 686px;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+.Rectangle_5 {
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	height: 37px;
+	left: 1842px;
+	top: 470px;
+}
+.Path_11 {
+	overflow: visible;
+	position: absolute;
+	width: 37px;
+	height: 37px;
+	left: 1842px;
+	top: 527px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Rectangle_7 {
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	height: 37px;
+	left: 1842px;
+	top: 584px;
+}
+.Path_12 {
+	overflow: visible;
+	position: absolute;
+	width: 37.055px;
+	height: 24.591px;
+	left: 949.219px;
+	top: 1008.745px;
+	transform: matrix(1,0,0,1,0,0);
+	--web-animation: fadein 1s ease-out;
+	--web-action-type: page;
+	--web-action-target: Naujienos1.html;
+	cursor: pointer;
+}
+#Rectangle_11 {
+	opacity: 0.64;
+}
+.Rectangle_11 {
+	position: absolute;
+	overflow: visible;
+	width: 30px;
+	height: 5px;
+	left: 1000px;
+	top: 686px;
+}
+#Rectangle_12 {
+	opacity: 0.64;
+}
+.Rectangle_12 {
+	position: absolute;
+	overflow: visible;
+	width: 30px;
+	height: 5px;
+	left: 1000px;
+	top: 696px;
+}
+#Rectangle_13 {
+	opacity: 0.64;
+}
+.Rectangle_13 {
+	position: absolute;
+	overflow: visible;
+	width: 30px;
+	height: 5px;
+	left: 1000px;
+	top: 706px;
+}
+#business {
+	opacity: 0.63;
+	position: absolute;
+	width: 32.117px;
+	height: 32.117px;
+	left: 864px;
+	top: 776.883px;
+	overflow: visible;
+}
+#Group_4 {
+	position: absolute;
+	width: 32.117px;
+	height: 32.117px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+#Group_3 {
+	position: absolute;
+	width: 32.117px;
+	height: 32.117px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+.Path_16 {
+	overflow: visible;
+	position: absolute;
+	width: 32.117px;
+	height: 32.117px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Group_6 {
+	position: absolute;
+	width: 9.944px;
+	height: 20.023px;
+	left: 11.086px;
+	top: 6.047px;
+	overflow: visible;
+}
+#Group_5 {
+	position: absolute;
+	width: 9.944px;
+	height: 20.023px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+.Path_17 {
+	overflow: visible;
+	position: absolute;
+	width: 9.945px;
+	height: 20.023px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}

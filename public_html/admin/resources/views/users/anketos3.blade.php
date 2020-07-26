@@ -79,7 +79,7 @@
                             {{  $balsaiu }} / -{{ $balsaip }}
                           </td>
                           <td class="td-actions text-right">
-                              <a rel="tooltip" class="btn btn-success btn-link" href="show/{{ $form->id }}" data-original-title="" title="">
+                              <a rel="tooltip" class="btn btn-success btn-link" href="/anketos/show/{{ $form->id }}" data-original-title="" title="">
                                 <i class="material-icons">edit</i>
                                 <div class="ripple-container"></div>
                               </a>

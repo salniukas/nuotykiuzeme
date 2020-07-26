@@ -5,9 +5,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <form method="post" action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal" id="prof">
+          <form id="form1" method="post" action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal" id="prof">
             @csrf
-            @method('PUT')
 
 
             <div class="card ">
@@ -28,14 +27,6 @@
                     </div>
                   </div>
                 @endif
-                <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Unikalus Id') }}</label>
-                  <div class="col-sm-7">
-                    <div class="form-group">
-                      {{$player->id}}
-                    </div>
-                  </div>
-                </div>
                 <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('Vardas') }}</label>
                   <div class="col-sm-7">
@@ -130,7 +121,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <a href="#"><button  class="btn btn-primary">{{ __('Išsaugoti') }}</button></a>
+                <button type="submit" form="form1" value="Submit"  class="btn btn-primary">{{ __('Išsaugoti') }}</button>
                 
               </div>
             </form>

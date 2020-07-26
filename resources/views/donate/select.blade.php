@@ -12,8 +12,8 @@
         			{{Form::label('email', 'Jūsų El.Paštas:')}}
         			{{Form::text('email', Auth::user()->email, array('class' => 'form-control', 'style' => 'width: 200px;'))}}
 
-        			{{Form::label('amount', 'Prenumeratos Laikotarpis')}}<br>
-        			{{Form::select('amount', array('500' => 'Vienas mėnesis(5€)', '1000' => 'Du mėnesiai(10€)', '1500' => 'Trys mėnesiai(15€)'))}}
+        			{{Form::label('amount', 'Paramos Kiekis')}}<br>
+        			{{Form::select('amount', array('500' => 'Patinka ką jūs darote (5€)', '1000' => 'Noriu, kad serveris gyvuotu (10€)', '1500' => 'Tikrai gerbiu jūsų veiklą(15€)'))}}
 
         			<br><br>{{Form::submit('Paremti'), array('class' => 'btn btn-success btn-link' )}}
 

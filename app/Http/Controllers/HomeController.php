@@ -9,6 +9,11 @@ use App\Form;
 use App\Player;
 use App\Forms_vote;
 
+use \D3lph1\MinecraftRconManager\DefaultConnector;
+use \D3lph1\MinecraftRconManager\Exceptions\ConnectSocketException;
+use \D3lph1\MinecraftRconManager\Exceptions\AccessDenyException;
+use Thedudeguy\Rcon;
+
 class HomeController extends Controller
 {
     /**
@@ -76,7 +81,7 @@ class HomeController extends Controller
     public function Patvirtintos()
     {
         if(Auth::user()->isAleradas()){
-    	   $forms = Form::where('accepted', 1)->paginate(15);
+    	   $forms = Form::where('accepted', 1)->where('aleradas', 0)->paginate(15);
 
             return view('users.anketos3',['forms' => $forms]);
         }
@@ -95,7 +100,33 @@ class HomeController extends Controller
 
     public function players()
     {
-        $players = Player::all();
+        
+        $players = Player::paginate(15);
         return view('pages.table_list', ['players' => $players]);
+    }
+
+    public function WhiteClear()
+    {
+    	$players = Player::where('suspended', 0)->get();
+
+    	$host = env('Server_IP');
+        $port = env('Server_PORT');
+        $password = env('Server_PASS');
+        $timeout = 3;                       // How long to timeout.
+        $rcon = new Rcon($host, $port, $password, $timeout);
+
+        foreach ($players as $player) {
+        	if ($rcon->connect())
+        	{
+          		$rcon->sendCommand('whitelist add '.$player->username);
+        	}
+        }
+
+        
+    }
+    public function BlackList()
+    {
+        $users = User::where('isBlacklist', 1)->paginate(15);
+        return view('pages.table_list2', ['users' => $users]);
     }
 }

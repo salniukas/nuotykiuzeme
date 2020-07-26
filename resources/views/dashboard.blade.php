@@ -3,6 +3,9 @@
 @section('content')
   <div class="content">
     <div class="container-fluid">
+      @if(Session::has('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+      @endif
       @if(Auth::user()->isAdmin || Auth::user()->isSupport || Auth::user()->isAleradas)
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">

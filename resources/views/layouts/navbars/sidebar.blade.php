@@ -68,6 +68,12 @@
           <p>{{ __('Paslaugos') }}</p>
         </a>
       </li>
+      <li class="nav-item{{ $activePage == 'juodasis' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('juodasis') }}">
+          <i class="material-icons">bubble_chart</i>
+          <p>{{ __('Juodasis Sąrašas') }}</p>
+        </a>
+      </li>
       {{-- <li class="nav-item{{ $activePage == 'map' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('map') }}">
           <i class="material-icons">location_ons</i>

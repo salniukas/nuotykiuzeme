@@ -4,6 +4,11 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Order;
+use Carbon\Carbon;
+use Thedudeguy\Rcon;
+use App\Service;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -13,7 +18,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\CallRoute'
     ];
 
     /**
@@ -24,8 +29,36 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->call(function(){
+            $orders = order::where('approved', 'pending')->get();
+            foreach ($orders as $order) {
+                $order->approved = 'cancelled';
+                $order->save();
+            }
+        })->daily();
+
+        $schedule->call(function(){
+            $en = Carbon::now()->locale('lt');
+            $start = $en->today()->format('Y-m-d H:i');
+
+            $orders = order::where('until', $start)->get();
+            foreach ($orders as $order) {
+                $service = Service::where('cost', $order->amount)->get();
+                $username = $order->username;
+                
+                $host = env('Server_IP');
+                $port = env('Server_PORT');
+                $password = env('Server_PASS');
+                $timeout = 3;
+                $rcon = new Rcon($host, $port, $password, $timeout);
+
+                if ($rcon->connect()){
+
+                    $rcon->sendCommand('pex user'.$username. 'group remove'. $service->name);
+                }
+            }
+        })->daily();
+
     }
 
     /**

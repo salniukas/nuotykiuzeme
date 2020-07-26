@@ -1,0 +1,433 @@
+.mediaViewInfo {
+	--web-view-name: Naujienos;
+	--web-view-id: Naujienos;
+	--web-enable-deep-linking: true;
+	--web-page-font: Roboto;
+}
+:root {
+	--web-view-ids: Naujienos;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Naujienos {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	font-family: Roboto;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: Naujienos;
+	--web-view-id: Naujienos;
+	--web-enable-deep-linking: true;
+	--web-page-font: Roboto;
+}
+@keyframes  {
+
+
+}
+#ID2020_05_09_12_16_13 {
+	position: absolute;
+	width: 1920px;
+	height: 1128px;
+	left: 0px;
+	top: -19px;
+	overflow: visible;
+}
+#Rectangle_1 {
+	opacity: 0.58;
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 1080px;
+	left: 0px;
+	top: 0px;
+}
+.Rectangle_2_p {
+	position: absolute;
+	overflow: visible;
+	width: 1921px;
+	height: 694px;
+	left: 11px;
+	top: 386px;
+}
+#Group_2 {
+	position: absolute;
+	width: 1921px;
+	height: 1166px;
+	left: 0px;
+	top: 14px;
+	overflow: visible;
+}
+.Rectangle_8 {
+	position: absolute;
+	overflow: visible;
+	width: 1920px;
+	height: 773px;
+	left: 0px;
+	top: 393px;
+}
+.Rectangle_2_t {
+	position: absolute;
+	overflow: visible;
+	width: 1921px;
+	height: 422px;
+	left: 0px;
+	top: 0px;
+}
+#Nuotyki___eme1 {
+	opacity: 0;
+	position: absolute;
+	width: 514px;
+	height: 514px;
+	left: 703px;
+	top: -230px;
+	overflow: visible;
+}
+#Nuotyki___em_ {
+	opacity: 0;
+	position: absolute;
+	left: 684px;
+	top: 121px;
+	overflow: visible;
+	width: 555px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto, Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 69px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Presti_inis_Minecraft_Lietuvi_ {
+	opacity: 0;
+	position: absolute;
+	left: 682px;
+	top: 212px;
+	overflow: visible;
+	width: 552px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto, Roboto;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Rectangle_3 {
+	opacity: 0;
+}
+.Rectangle_3 {
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	height: 57px;
+	left: 718px;
+	top: 488px;
+}
+#Rectangle_9 {
+	opacity: 0;
+}
+.Rectangle_9 {
+	position: absolute;
+	overflow: visible;
+	width: 217px;
+	height: 57px;
+	left: 985px;
+	top: 488px;
+}
+#Rectangle_4 {
+	opacity: 0;
+}
+.Rectangle_4 {
+	position: absolute;
+	overflow: visible;
+	width: 59px;
+	height: 57px;
+	left: 718px;
+	top: 488px;
+}
+#Rectangle_10 {
+	opacity: 0;
+}
+.Rectangle_10 {
+	position: absolute;
+	overflow: visible;
+	width: 59px;
+	height: 57px;
+	left: 985px;
+	top: 488px;
+}
+#file {
+	opacity: 0;
+	position: absolute;
+	width: 25.467px;
+	height: 31.374px;
+	left: 734.405px;
+	top: 501.323px;
+	overflow: visible;
+}
+.Path_1 {
+	overflow: visible;
+	position: absolute;
+	width: 25.466px;
+	height: 31.374px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_2 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 5.776px;
+	left: 4.553px;
+	top: 13.783px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_3 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 5.776px;
+	left: 4.553px;
+	top: 21.659px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_4 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 13.783px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_5 {
+	overflow: visible;
+	position: absolute;
+	width: 9.714px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 17.721px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_6 {
+	overflow: visible;
+	position: absolute;
+	width: 5.776px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 21.659px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_7 {
+	overflow: visible;
+	position: absolute;
+	width: 9.714px;
+	height: 1.838px;
+	left: 12.429px;
+	top: 25.597px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_8 {
+	overflow: visible;
+	position: absolute;
+	width: 6.761px;
+	height: 1.838px;
+	left: 4.553px;
+	top: 4.923px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Path_9 {
+	overflow: visible;
+	position: absolute;
+	width: 9.714px;
+	height: 1.838px;
+	left: 4.553px;
+	top: 8.861px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_10 {
+	opacity: 0;
+}
+.Path_10 {
+	overflow: visible;
+	position: absolute;
+	width: 157.709px;
+	height: 56.747px;
+	left: 777px;
+	top: 488.253px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_13 {
+	opacity: 0;
+}
+.Path_13 {
+	overflow: visible;
+	position: absolute;
+	width: 157.709px;
+	height: 56.747px;
+	left: 1044px;
+	top: 488.253px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#ATRANKA {
+	opacity: 0;
+	position: absolute;
+	left: 802px;
+	top: 503px;
+	overflow: visible;
+	width: 104px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto, Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#MENIU {
+	opacity: 0;
+	position: absolute;
+	left: 1087px;
+	top: 504px;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto, Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+.Rectangle_5 {
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	height: 37px;
+	left: 1842px;
+	top: 465px;
+	--web-animation: fadein 1s ease-out;
+	--web-action-type: page;
+	--web-action-target: Home.html;
+	cursor: pointer;
+}
+.Path_11 {
+	overflow: visible;
+	position: absolute;
+	width: 37px;
+	height: 37px;
+	left: 1842px;
+	top: 522px;
+	transform: matrix(1,0,0,1,0,0);
+}
+.Rectangle_7 {
+	position: absolute;
+	overflow: visible;
+	width: 37px;
+	height: 37px;
+	left: 1842px;
+	top: 579px;
+}
+.Path_12 {
+	overflow: visible;
+	position: absolute;
+	width: 37.055px;
+	height: 24.59px;
+	left: 949.219px;
+	top: 1008.745px;
+	transform: matrix(1,0,0,1,0,0);
+	--web-animation: fadein 1s ease-out;
+	--web-action-type: page;
+	--web-action-target: Video.html;
+	cursor: pointer;
+}
+#Rectangle_11 {
+	opacity: 0;
+}
+.Rectangle_11 {
+	position: absolute;
+	overflow: visible;
+	width: 30px;
+	height: 5px;
+	left: 1000px;
+	top: 504px;
+}
+#Rectangle_12 {
+	opacity: 0;
+}
+.Rectangle_12 {
+	position: absolute;
+	overflow: visible;
+	width: 30px;
+	height: 5px;
+	left: 1000px;
+	top: 514px;
+}
+#Rectangle_13 {
+	opacity: 0;
+}
+.Rectangle_13 {
+	position: absolute;
+	overflow: visible;
+	width: 30px;
+	height: 5px;
+	left: 1000px;
+	top: 524px;
+}
+#Naujienos_bm {
+	position: absolute;
+	left: 777px;
+	top: 193px;
+	overflow: visible;
+	width: 367px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto, Roboto;
+	font-style: bold;
+	font-weight: bold;
+	font-size: 69px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Lorem_Ipsum_is_simply_dummy__t {
+	position: absolute;
+	left: 320px;
+	top: 338px;
+	overflow: visible;
+	width: 573px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Roboto, Roboto;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}
+#Lorem_Ipsum_is_simply_dummy__t_bo {
+	position: absolute;
+	left: 1029px;
+	top: 338px;
+	overflow: visible;
+	width: 573px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Roboto, Roboto;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+	letter-spacing: 1px;
+}

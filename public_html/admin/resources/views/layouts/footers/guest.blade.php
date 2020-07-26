@@ -29,7 +29,7 @@
         <script>
             document.write(new Date().getFullYear())
         </script>, Padaryta su <i class="material-icons">favorite</i> by
-        <a href="https://www.nuotykiuzeme.lt" target="_blank">Šalna</a>
+        <a href="http://bapserveris.lt/" target="_blank">Šalna</a>
         </div>
     </div>
 </footer>

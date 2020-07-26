@@ -1,0 +1,139 @@
+.modalBG {
+    width: 100%;
+    min-height: 100vh;
+    background: #000000aa;
+    position: absolute;
+    z-index: 10;
+}
+
+.modal {
+    width: 50%;
+    min-height: 40vh;
+    margin-left: 25%;
+    margin-top: 15vh;
+    background: #ffffff;
+    position: absolute;
+    z-index: 10;
+    padding: 25px;
+    font-family: FuturaPTDemi;
+    font-size: 1.25em;
+}
+
+.modal h1 {
+    font-size: 3em;
+    text-align: center;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .modal {
+        font-size: 2.75vw;
+    }
+}
+
+/* --------------------------------------------------------------------------- */
+
+.m_contact {
+    box-shadow: #4B36E0 10px 10px;
+    background: url('../assets/modal/Contacts.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #ffffff;
+    background-position: right;
+}
+.m_contact h1, .m_contact .h {
+    color: #4B36E0;
+}
+.m_contact .h {
+    font-family: FuturaPTLight;
+}
+
+.m_info {
+    box-shadow: #E22D6F 10px 10px;
+    background: url('../assets/modal/Information.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #ffffff;
+	text-align: center;
+}
+.m_info h1, .m_info h2 {
+    color: #E22D6F;
+    text-align: center;
+}
+.m_info .t {
+    font-family: FuturaPTLight;
+}
+.m_info .u {
+    font-family: FuturaPTLight;
+    color: #E22D6F;
+}
+
+.m_news {
+    box-shadow: #E68AD4 10px 10px;
+    background: url('../assets/modal/News_Tab.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ffffff;
+}
+.m_news h1 {
+    color: #E68AD4;
+}
+.m_news h2 {
+    color: #E68AD4;
+}
+.m_news span {
+    font-family: FuturaPTLight;
+}
+.m_news .q {
+    font-family: FuturaPTLight;
+}
+.m_news .r {
+    font-family: FuturaPTLight;
+	color: #E68AD4;
+}
+.m_news .q1 {
+    font-family: FuturaPTLight;
+}
+.m_news .q2 {
+    font-family: FuturaPTLight;	
+	color: #E68AD4;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.m_visible {
+    visibility: visible;
+    animation: fadeIn 350ms ease;
+    opacity: 1;
+    display: block;
+}
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0; visibility: hidden; transform: scale(0);}
+    80% {opacity: 0.9; visibility: visible; transform: scale(1.25);}
+    100% {opacity: 1; visibility: visible; transform: scale(1);}
+}
+@keyframes fadeIn {
+    0% {opacity: 0; visibility: hidden; transform: scale(0);}
+    80% {opacity: 0.9; visibility: visible; transform: scale(1.25);}
+    100% {opacity: 1; visibility: visible; transform: scale(1);}
+}
+
+.m_hidden {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOut 350ms ease;
+    transform: scale(0);
+}
+@-webkit-keyframes fadeOut {
+    0% {opacity: 1; visibility: visible; transform: scale(1);}
+    20% {opacity: 0.9; visibility: visible; transform: scale(1.25);}
+    100% {opacity: 0; visibility: hidden; transform: scale(0);}
+}
+@keyframes fadeOut {
+    0% {opacity: 1; visibility: visible; transform: scale(1);}
+    20% {opacity: 0.9; visibility: visible; transform: scale(1.25);}
+    100% {opacity: 0; visibility: hidden; transform: scale(0);}
+}
+.m_temp_hidden {
+    display: none;
+}

@@ -22,7 +22,7 @@ class PlayerAddController extends Controller
   public function register()
   {
       $userID = Auth::user()->discord_id;
-      if (Auth::user()->isAleradas && !Auth::user()->isAdded) {
+      if (Auth::user()->isAleradas && !Auth::user()->isAdded || Auth::user()->isDonator) {
          return view('profile.edit3');
       }elseif(Auth::user()->isAdded){
         abort(422);
@@ -55,7 +55,6 @@ class PlayerAddController extends Controller
       }
       //Add to Whitelist
         $username = $request->username;
-        $rase = $request->rase;
 
         $host = env('Server_IP');
         $port = env('Server_PORT');
@@ -66,11 +65,10 @@ class PlayerAddController extends Controller
         if ($rcon->connect())
         {
           $rcon->sendCommand('whitelist add '.$username);
-          $rcon->sendCommand('team join '.$rase.' '.$username);
         }
 
       //redirect
-   		return redirect('zaidejai')->with('success', ['Žaidėjas pridetas sekmingai!']);
+   		return redirect('home')->with('success', ['Žaidėjas pridetas sekmingai!']);
    }
    	public function show($id)
    	{
@@ -274,21 +272,6 @@ class PlayerAddController extends Controller
           $player->discord = $request->get('discord');
           $player->age = $request->get('age');
           $player->veikla = $request->get('veikla');
-
-          if ($player->rase != $request->rase) {
-            $host = env('Server_IP');
-            $port = env('Server_PORT');
-            $password = env('Server_PASS');
-            $timeout = 3;                       // How long to timeout.
-            $rcon = new Rcon($host, $port, $password, $timeout);
-
-              if ($rcon->connect())
-              {
-                $rcon->sendCommand('team join '.$rase.' '.$username);
-              }
-          }
-
-          $player->rase = $request->get('rase');
           $player->youtube = $request->get('youtube');
           $player->twitch = $request->get('twitch');
           $player->save();

@@ -5,10 +5,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <form method="post" action="{{ route('profile.update') }}" autocomplete="off" class="form-horizontal">
-            @csrf
-            @method('put')
-
             <div class="card ">
               <div class="card-header card-header-primary">
                 <h4 class="card-title">{{ __('Anketos Informacija') }}</h4>
@@ -149,14 +145,21 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Patvirtinti') }}</button>
-                <button type="submit" class="btn btn-primary">{{ __('Atmesti') }}</button>
+              @if(Auth::user()->isAleradas && !Auth::user()->isAdmin && !Auth::user()->isSupport && is_null($voted))
+                <a href="/anketos/vote/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('+') }}</button></a>
+                <a href="/anketos/vote2/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('-') }}</button></a>
+              @else
+                Jau Balsavote
+              @endif
+              @if(Auth::user()->isSupport)
+                <a href="/atranka/approve/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('Patvirtinti') }}</button></a>
+                <a href="/atranka/trash/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('Atmesti') }}</button></a>
                 @if($forms->accepted && !$forms->aleradas)
-                  <button type="submit" class="btn btn-primary">{{ __('Pridėti į Serverį') }}</button>
+                  <a href="/atranka/aleradas/{{ $forms->id }}"><button type="submit" class="btn btn-primary">{{ __('Pridėti į Serverį') }}</button></a>
                 @endif
+              @endif
               </div>
             </div>
-          </form>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'discord_id', 'email', 'password','avatar'
+        'name', 'username', 'discord_id', 'email', 'password','avatar', 'minecraft'
     ];
 
     /**
@@ -92,6 +92,16 @@ class User extends Authenticatable
         }
     }
 
+    public function Minecraft()
+    {
+    if ($this->minecraft) 
+    {
+         return true;
+    } else {
+        return false;
+        }
+    }
+
     //Pasiema Email
     public function getEmailAttribute($value)
     {
@@ -126,6 +136,10 @@ class User extends Authenticatable
         return ($value);
     }
     public function getIsAddedAttribute($value)
+    {
+        return ($value);
+    }
+    public function getminecraftAttribute($value)
     {
         return ($value);
     }

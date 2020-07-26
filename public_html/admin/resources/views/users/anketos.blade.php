@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'Anketos', 'titlePage' => __('Anketos')])
+@extends('layouts.app', ['activePage' => 'Užsakymai', 'titlePage' => __('Užsakymai')])
 
 @section('content')
   <div class="content">
@@ -7,8 +7,8 @@
         <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <h4 class="card-title ">{{ __('Anketos') }}</h4>
-                <p class="card-category"> {{ __('Čia galite tikrinti anketas') }}</p>
+                <h4 class="card-title ">{{ __('Užsakymai') }}</h4>
+                <p class="card-category"> {{ __('Čia galite peržiurėti Užsakymus') }}</p>
               </div>
               <div class="card-body">
                 @if (session('status'))
@@ -32,64 +32,66 @@
                   <table class="table">
                     <thead class=" text-primary">
                       <th>
-                          {{ __('Name') }}
+                          {{ __('Id') }}
                       </th>
                       <th>
-                        {{ __('Age') }}
+                        {{ __('Kaina') }}
+                      </th>
+                      <th>
+                        {{ __('El.pastas') }}
                       </th>
                       <th>
                         {{ __('Username') }}
                       </th>
                       <th>
-                        {{ __('Discord ID') }}
+                        {{ __('Paslauga') }}
                       </th>
                       <th>
-                        {{ __('Email') }}
+                        {{ __('Statusas') }}
                       </th>
                       <th>
-                        {{ __('Už/Prieš') }}
+                        {{ __('Data') }}
                       </th>
-                      <th class="text-right">
+                      <th>
                         {{ __('Actions') }}
                       </th>
                     </thead>
                     <tbody>
-                      @foreach($forms as $form)
+                      @foreach($orders as $order)
                         <tr>
                           <td>
-                            {{ $form->name }}
-                          </td>
-                          <td>
-                            {{ $form->age }}
-                          </td>
-                          <td>
-                            {{ $form->username }}
-                          </td>
-                          <td>
-                            {{ $form->discord_id }}
-                          </td>
-                          <td>
-                            {{ $form->email }}
+                            {{ $order->id }}
                           </td>
                           <td>
                             @php
-                              $balsaiu = App\Forms_vote::where('voted_for', $form->id)->where('reason', 'Už')->count();
-                              $balsaip = App\Forms_vote::where('voted_for', $form->id)->where('reason', 'Prieš')->count();         
+                              $kaina = $order->amount /100
                             @endphp
-                            {{  $balsaiu }} / -{{ $balsaip }}
+                            {{ $kaina }} €
                           </td>
-                          <td class="td-actions text-right">
-                              <a rel="tooltip" class="btn btn-success btn-link" href="show/{{ $form->id }}" data-original-title="" title="">
-                                <i class="material-icons">edit</i>
-                                <div class="ripple-container"></div>
-                              </a>
+                          <td>
+                            {{ $order->email }}
+                          </td>
+                          <td>
+                            {{ $order->username }}
+                          </td>
+                          <td>
+                            {{ $order->service_name }}
+                          </td>
+                          <td>
+                            {{ $order->approved }}
+                          </td>
+                          <td>
+                            {{ $order->created_at }}
+                          </td>
+                          <td>
+                            
                           </td>
                         </tr>
                       @endforeach
 
                     </tbody>
                   </table>
-                  {{ $forms->links() }}
+                  {{ $orders->links() }}
                 </div>
               </div>
             </div>

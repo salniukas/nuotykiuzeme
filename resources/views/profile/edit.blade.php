@@ -3,6 +3,9 @@
 @section('content')
   <div class="content">
     <div class="container-fluid">
+            @if(Session::has('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+      @endif
       <div class="row">
         <div class="col-md-12">
             <div class="card ">
@@ -154,6 +157,7 @@
               @if(Auth::user()->isSupport)
                 <a href="/atranka/approve/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('Patvirtinti') }}</button></a>
                 <a href="/atranka/trash/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('Atmesti') }}</button></a>
+                <a href="/anketos/blacklist/{{ $forms->id }}"><button  class="btn btn-primary">{{ __('Black List') }}</button></a>
                 @if($forms->accepted && !$forms->aleradas)
                   <a href="/atranka/aleradas/{{ $forms->id }}"><button type="submit" class="btn btn-primary">{{ __('Pridėti į Serverį') }}</button></a>
                 @endif

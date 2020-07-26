@@ -29,7 +29,7 @@
       <script>
         document.write(new Date().getFullYear())
       </script>, made with <i class="material-icons"></i> by
-      <a href="https://www.nuotykiuzeme.lt" target="_blank">Nuotykių Žemė</a>
+      <a href="http://bapserveris.lt/" target="_blank">Šalna</a>
     </div>
   </div>
 </footer>

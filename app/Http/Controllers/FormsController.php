@@ -23,7 +23,13 @@ class FormsController extends Controller
 
    public function create()
    {
-   	return view('form.create');
+      if (Auth::user()->isBlacklist) {
+         Session::flash('message', 'Jūs esate juodajame sąraše.');
+         return redirect('home');
+      }else{
+         return view('form.create');
+      }
+   	
    }
 
 
@@ -49,6 +55,13 @@ class FormsController extends Controller
 
    		//Store
    		 Form::create(request(['name', 'age', 'discord_id', 'email','kapl', 'kokia', 'kodel', 'kaip', 'mic', 'darbai', 'serv', 'content', 'subs', 'username']));
+          $form = Form::orderBy('created_at', 'DESC')->first();
+
+          if ($form->age < 13) {
+             $form->rejected = 1;
+             $form->operator = "Robotukas. Anketa atmesta.";
+             $form->save();
+          }
 
    		 $request->session()->flash('success', 'Anketa gauta');
 
@@ -109,9 +122,10 @@ class FormsController extends Controller
 
    public function show($id)
    {
+
       if (Auth::user()->isSupport || Auth::user()->isAdmin || Auth::user()->isAleradas) {
             $forms = Form::find($id);
-            // $fafa = Forms_vote::where('voted_for', $id)->all();
+
             $voted = Forms_vote::where('voter_discord', Auth::user()->discord_id)->where('voted_for', $id)->first();
             $balsaiu = Forms_vote::where('voted_for', $id)->where('reason', 'Už')->count();
             $balsaip = Forms_vote::where('voted_for', $id)->where('reason', 'Prieš')->count();
@@ -135,8 +149,9 @@ class FormsController extends Controller
    	 		$player->rejected = 1;
    	 	}
    	 	$player->save();
-   	 	Session::flash('message', 'Anketa Atmesta');
-		return redirect("/anketos");
+   	 	Session::flash('message', 'Anketa Atmesta, Rodoma kita anketa');
+         $next = $id + 1;
+		return redirect("anketos/show/".$next);
    	 }
    }
 
@@ -154,8 +169,9 @@ class FormsController extends Controller
    	 		$player->accepted = 1;
    	 		$player->save();
    	 	}
-   	 	Session::flash('message', 'Anketa Permesta Į antrą etapą');
-   	 	return redirect("/anketos");
+   	 	Session::flash('message', 'Anketa Perkelta Į antrą etapą, Rodoma kita anketa');
+         $next = $id + 1;
+   	 	return redirect("anketos/show/".$next);
 
    	 }else{
    	 	abort(404);
@@ -175,8 +191,9 @@ class FormsController extends Controller
          $user->isAleradas = 1;
          $user->save();
 
-         Session::flash('message', 'Žaidėjas pridėtas į Aleradą');
-         return redirect("/anketos");
+         Session::flash('message', 'Žaidėjas pridėtas į serverį.');
+         $next = $id + 1;
+         return redirect("anketos/show/".$next);
 
        }else{
          abort(404);
@@ -199,7 +216,7 @@ class FormsController extends Controller
    		Mail::to($users)->send(new FormAccept);
    		Mail::to($user)->send(new FormReject);
    		Session::flash('message', 'Laiškai Išsiūsti');
-   		return redirect("/anketos");
+         return redirect("/anketos");
    }
 
    public function vote($id)
@@ -216,7 +233,9 @@ class FormsController extends Controller
          }else{
          	Session::flash('message', 'Jau balsavote');
          }
-      return redirect("/anketos");
+         Session::flash('message', 'Sekmingai prabalsavote, Rodoma kita anketa');
+         $next = $id + 1;
+         return redirect("anketos/show/".$next);
    }
 }
 
@@ -234,8 +253,35 @@ class FormsController extends Controller
          }else{
          	Session::flash('message', 'Jau balsavote');
          }
-      return redirect("/anketos");
+         Session::flash('message', 'Sekmingai prabalsavote, Rodoma kita anketa');
+         $next = $id + 1;
+         return redirect("anketos/show/".$next);
    }
 }
+
+   public function blackl($id)
+   {
+      if (Auth::user()->isSupport || Auth::user()->isAdmin) {
+         $player = Form::find($id);
+
+         $player->operator = Auth::user()->username;
+
+         if ($player->accepted == 1) {
+            $player->accepted = 0;
+            $player->rejected = 1;
+         }else{
+            $player->rejected = 1;
+         }
+         $user = User::where('discord_id', $player->discord_id)->first();
+
+         $user->isBlacklist = 1;
+         
+         $user->save();
+         $player->save();
+         Session::flash('message', 'Žaidėjas pridėtas į Juodaji Sąrašą, Rodoma kita anketa');
+         $next = $id + 1;
+      return redirect("anketos/show/".$next);
+       }
+   }
 
 }

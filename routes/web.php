@@ -19,11 +19,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('zaidejai', 'PlayerAddController@players')->name('zaidejai');
 Route::get('video', 'VideoController@index')->name('video');
 Route::get('donate', 'PaymentController@index')->name('donate');
+Route::get('addall', 'HomeController@WhiteClear')->name('wl');
 
 //Anketos
 
-Route::get('atranka', 'FormsController@create')->name('Atranka');
-Route::post('anketele/store', 'FormsController@store')->name('atrankaS');
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('manoanketos', 'FormsController@Mano')->name('ManoAnketos');
@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('manoanketos/{id}', 'FormsController@Manoa')->name('ManoAnketa');
 
 	Route::get('anketos', 'HomeController@Anketos')->name('Anketos');
+	Route::get('juodasis', 'HomeController@BlackList')->name('juodasis');
 	Route::get('anketos/atmestos', 'HomeController@Atmestos')->name('Atmestos-Anketos');
 	Route::get('anketos/patvirtintos', 'HomeController@Patvirtintos')->name('patvirtintos-anketos');
 
@@ -42,7 +43,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('anketos/vote/{id}', 'FormsController@vote');
 	Route::get('anketos/vote2/{id}', 'FormsController@vote2');
+	Route::get('anketos/blacklist/{id}', 'FormsController@blackl');
 	Route::get('anketos/show/{id}', 'HomeController@Show')->name('show-anketa');
+
+	Route::get('atranka', 'FormsController@create')->name('Atranka');
+	Route::post('anketele/store', 'FormsController@store')->name('atrankaS');
 
 });
 
@@ -113,6 +118,6 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::post('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });

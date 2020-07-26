@@ -56,7 +56,7 @@
                   <label class="col-sm-2 col-form-label">{{ __('Discord_id') }}</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                      <input class="form-control" name="discord_id" id="discord_id" type="text" value=""/>
+                      <input class="form-control" name="discord_id" id="discord_id" type="text" value="{{ Auth::user()->discord_id }}"/>
                     </div>
                   </div>
                 </div>
